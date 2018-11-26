@@ -1,7 +1,7 @@
 # DevComposants
 
 ##### @ISTV @TNSI @M2 @Developpement par Composants
-@GuillaumeBouchez @BlorZ
+##### @GuillaumeBouchez @BlorZ
 
 ### Application Java développée avec un serveur Wildfly gérant une vente de véhicules.
 

@@ -1,9 +1,9 @@
 # DevComposants
 
-@ISTV @TNSI @M2 @Developpement par Composants
+##### @ISTV @TNSI @M2 @Developpement par Composants
 @GuillaumeBouchez @BlorZ
 
-Application Java développée avec un serveur Wildfly gérant une vente de véhicules.
+### Application Java développée avec un serveur Wildfly gérant une vente de véhicules.
 
 Site_TP contient le projet EJB.<br>
 Entities contient les entités.<br>

@@ -1,5 +1,4 @@
 /.metadata/
-
 /Tests/
-*.zip
 /wildfly-14.0.1.Final/
+/RemoteSystemsTempFiles/

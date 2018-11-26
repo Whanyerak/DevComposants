@@ -3,9 +3,9 @@
 	<name>EAR</name>
 	<comment></comment>
 	<projects>
-		<project>Site_TP</project>
 		<project>Entities</project>
 		<project>Interface_Web</project>
+		<project>Site_TP</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

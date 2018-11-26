@@ -4,8 +4,8 @@
 	<comment></comment>
 	<projects>
 		<project>Site_TP</project>
-		<project>Interface_Web</project>
 		<project>Entities</project>
+		<project>Interface_Web</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

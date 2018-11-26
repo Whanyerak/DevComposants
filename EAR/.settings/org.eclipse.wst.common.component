@@ -5,11 +5,11 @@
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="Interface_Web.war" deploy-path="/" handle="module:/resource/Interface_Web/Interface_Web">
-            <dependent-object/>
+        <dependent-module archiveName="Entities.jar" deploy-path="/lib" handle="module:/resource/Entities/Entities">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="Entities.jar" deploy-path="/lib" handle="module:/resource/Entities/Entities">
+        <dependent-module archiveName="Interface_Web.war" deploy-path="/" handle="module:/resource/Interface_Web/Interface_Web">
+            <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>

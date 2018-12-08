@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -27,7 +28,8 @@ public abstract class Vehicule_entity implements Serializable {
 	private int quantite;
 	private String couleur;
 	private String description;
-	private List<String> options;
+	@OneToMany
+	private List<Option> options;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -91,11 +93,11 @@ public abstract class Vehicule_entity implements Serializable {
 		this.description = description;
 	}
 
-	public List<String> getOptions() {
+	public List<Option> getOptions() {
 		return options;
 	}
 
-	public void setOptions(List<String> options) {
+	public void setOptions(List<Option> options) {
 		this.options = options;
 	}
 	

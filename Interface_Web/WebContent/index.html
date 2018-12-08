@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="ISO-8859-1">
-		<title>PA - le dieu</title>
-	</head>
-	<body>
-		<form action="AddVoiture_Servlet" method="post">
-		
-			<input type="text" name="marque" placeholder="BMW"><br>
-			<input type="text" name="modele" placeholder="118i"><br>
-			<input type="number" name="prix" placeholder="10000"><br>
-			<input type="text" name="couleur" placeholder="Noire"><br>
-			<button type="submit">Add voiture</button>
-		
-		</form>
-		
-	</body>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Site de vente</title>
+  </head>
+  <body>
+    <form action="Voiture_Servlet" method="post">
+      <div id="addForm" class="form-group col-md-6 mx-sm-3">
+        <input
+          type="text"
+          class="form-control"
+          name="marque"
+          placeholder="BMW"
+        />
+        <input
+          type="text"
+          class="form-control"
+          name="modele"
+          placeholder="118i"
+        />
+        <input
+          type="number"
+          class="form-control"
+          name="prix"
+          placeholder="10000"
+        />
+        <input
+          type="text"
+          class="form-control"
+          name="couleur"
+          placeholder="Noire"
+        />
+        <button type="submit" class="btn btn-primary">Add voiture</button>
+      </div>
+    </form>
+  </body>
 </html>

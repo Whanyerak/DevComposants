@@ -32,9 +32,9 @@ public class Voitures implements IVoiture {
 	@Override
 	public List<Voiture_entity> getVoitures() {
 		
-		List<Voiture_entity> motos = new ArrayList<>();
-		motos = (List<Voiture_entity>)em.createQuery("select v from Voiture_entity m").getResultList();
+		List<Voiture_entity> vehicules = new ArrayList<>();
+		vehicules = (List<Voiture_entity>)em.createQuery("select v from Voiture_entity v").getResultList();
 		
-		return motos;
+		return vehicules;
 	}
 }

@@ -3,6 +3,7 @@ package src.moto;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -10,6 +11,7 @@ import entities.Moto_entity;
 import entities.Voiture_entity;
 import interfaces.IMoto;
 
+@Stateless
 public class Motos implements IMoto{
 	@PersistenceContext(name="testbdd")
 	public EntityManager em;
@@ -23,7 +25,6 @@ public class Motos implements IMoto{
 		ve.setPrix(voiture.getPrix());
 		em.persist(ve);
 	}
-
 
 	@SuppressWarnings("unchecked")
 	@Override

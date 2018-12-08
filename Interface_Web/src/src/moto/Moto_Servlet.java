@@ -21,7 +21,7 @@ public class Moto_Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	@EJB
-	private IMoto vehicule_inter;
+	private IMoto inter;
 	
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,7 +35,7 @@ public class Moto_Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Moto_entity> motos = vehicule_inter.getMotos();
+		List<Moto_entity> motos = inter.getMotos();
 		
 		request.setAttribute("motos", motos);
 		request.getRequestDispatcher("Get_content.jsp").forward(request, response);
@@ -53,7 +53,7 @@ public class Moto_Servlet extends HttpServlet {
 		m.setMarque(marque);
 		m.setModele(modele);
 		m.setPrix(prix);
-		vehicule_inter.addMoto(m);
+		inter.addMoto(m);
 				
 		request.setAttribute("m", m);
 		request.getRequestDispatcher("Added_page.jsp").forward(request, response);

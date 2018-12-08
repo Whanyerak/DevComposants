@@ -25,7 +25,7 @@ public abstract class Vehicule_entity implements Serializable {
 	private String marque;
 	private String modele;
 	private String prix;
-	private int quantite;
+	private Integer quantite;
 	private String couleur;
 	private String description;
 	@OneToMany
@@ -69,11 +69,11 @@ public abstract class Vehicule_entity implements Serializable {
 		this.prix = prix;
 	}
 
-	public int getQuantite() {
+	public Integer getQuantite() {
 		return quantite;
 	}
 
-	public void setQuantite(int quantite) {
+	public void setQuantite(Integer quantite) {
 		this.quantite = quantite;
 	}
 

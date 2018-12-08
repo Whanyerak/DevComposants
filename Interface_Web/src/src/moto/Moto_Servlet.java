@@ -1,4 +1,4 @@
-package src;
+package src.moto;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,38 +11,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import entities.Moto_entity;
-import entities.Voiture_entity;
-import interfaces.Vehicule_interface;
+import interfaces.IMoto;
 
 /**
  * Servlet implementation class AddVoiture_Servlet
  */
-@WebServlet("/AddVoiture_Servlet")
-public class AddVoiture_Servlet extends HttpServlet {
+@WebServlet("/Moto_Servlet")
+public class Moto_Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	@EJB
-	private Vehicule_interface vehicule_inter;
+	private IMoto vehicule_inter;
 	
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddVoiture_Servlet() {
+    public Moto_Servlet() {
         super();
-        // TODO Auto-generated constructor stub
+      
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		List<Voiture_entity> voitures = vehicule_inter.get_voitures();
-		List<Moto_entity> motos = vehicule_inter.get_motos();
-
+		List<Moto_entity> motos = vehicule_inter.getMotos();
 		
-		request.setAttribute("voitures", voitures);
 		request.setAttribute("motos", motos);
 		request.getRequestDispatcher("Get_content.jsp").forward(request, response);
 	}
@@ -51,21 +45,17 @@ public class AddVoiture_Servlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		String marque = String.valueOf(request.getParameter("marque"));
 		String modele = String.valueOf(request.getParameter("modele"));
 		String prix = String.valueOf(request.getParameter("prix"));
-//		String couleur = String.valueOf(request.getParameter("couleur"));
-		Boolean roulettes = Boolean.valueOf(request.getParameter("roulettes"));
 		
-		//vehicule_inter.add_voiture(marque, modele, prix, couleur);
-//		Voiture_entity v = new Voiture_entity(marque, modele, prix, couleur);
-//		vehicule_inter.add_voiture(v);
-		Moto_entity m = new Moto_entity(marque, modele, prix, roulettes);
-		vehicule_inter.add_moto(m);
+		Moto_entity m = new Moto_entity();
+		m.setMarque(marque);
+		m.setModele(modele);
+		m.setPrix(prix);
+		vehicule_inter.addMoto(m);
 				
 		request.setAttribute("m", m);
-//		request.setAttribute("v", v);
 		request.getRequestDispatcher("Added_page.jsp").forward(request, response);
 	}
 

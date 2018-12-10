@@ -1,7 +1,14 @@
 package entities;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * Entity implementation class for Entity: vehicule
@@ -15,30 +22,27 @@ public abstract class Vehicule_entity implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	private String type;
 	private String marque;
 	private String modele;
 	private String prix;
+	private Integer quantite;
+	private String couleur;
+	private String description;
+	@OneToMany
+	private List<Option> options;
 	
 	private static final long serialVersionUID = 1L;
 
 	public Vehicule_entity() {
 		super();
 	}
-	
-	public Vehicule_entity(String marque, String modele, String prix) {
-		super();
-		this.marque = marque;
-		this.modele = modele;
-		this.prix = prix;
-	}
-	
-	public String getType() {
-		return type;
+
+	public int getId() {
+		return id;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getMarque() {
@@ -64,7 +68,37 @@ public abstract class Vehicule_entity implements Serializable {
 	public void setPrix(String prix) {
 		this.prix = prix;
 	}
+
+	public Integer getQuantite() {
+		return quantite;
+	}
+
+	public void setQuantite(Integer quantite) {
+		this.quantite = quantite;
+	}
+
+	public String getCouleur() {
+		return couleur;
+	}
+
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<Option> getOptions() {
+		return options;
+	}
+
+	public void setOptions(List<Option> options) {
+		this.options = options;
+	}
 	
-	
-   
 }

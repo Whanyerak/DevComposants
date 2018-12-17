@@ -8,7 +8,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import entities.Moto_entity;
-import entities.Voiture_entity;
 import interfaces.IMoto;
 
 @Stateless
@@ -17,13 +16,8 @@ public class Motos implements IMoto{
 	public EntityManager em;
 
 	@Override
-	public void addMoto(Moto_entity voiture) {
-
-		Voiture_entity ve = new Voiture_entity();
-		ve.setMarque(voiture.getMarque());
-		ve.setModele(voiture.getModele());
-		ve.setPrix(voiture.getPrix());
-		em.persist(ve);
+	public void addMoto(Moto_entity moto) {
+		em.persist(moto);
 	}
 
 	@SuppressWarnings("unchecked")

@@ -20,11 +20,7 @@ public class Voitures implements IVoiture {
 	@Override
 	public void addVoiture(Voiture_entity voiture) {
 		
-		Voiture_entity ve = new Voiture_entity();
-		ve.setMarque(voiture.getMarque());
-		ve.setModele(voiture.getModele());
-		ve.setPrix(voiture.getPrix());
-		em.persist(ve);
+		em.persist(voiture);
 	}
 	
 	

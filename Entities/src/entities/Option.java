@@ -15,8 +15,6 @@ public class Option implements Serializable{
 	@Id
 	private String name;
 	
-	private String description;
-	
 	public Option() {
 		super();
 	}
@@ -29,12 +27,4 @@ public class Option implements Serializable{
 		this.name = name;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
 }

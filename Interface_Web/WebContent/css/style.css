@@ -7,3 +7,11 @@ html {
 	margin-top: 10%;
 	margin-left: 25% !important;
 }
+
+.jumbotron {
+	padding: 2rem 1rem !important;
+}
+
+#articles {
+	font-size: 1.5rem !important;
+}

@@ -37,7 +37,7 @@ public class Moto_Servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Moto_entity> motos = inter.getMotos();
 		
-		request.setAttribute("motos", motos);
+		request.setAttribute("vehicules", motos);
 		request.getRequestDispatcher("Get_content.jsp").forward(request, response);
 	}
 

@@ -34,7 +34,7 @@ public class Voiture_Servlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Voiture_entity> voitures = inter.getVoitures();
 
-		request.setAttribute("voitures", voitures);
+		request.setAttribute("vehicules", voitures);
 		request.getRequestDispatcher("Get_content.jsp").forward(request, response);
 	}
 
@@ -53,7 +53,7 @@ public class Voiture_Servlet extends HttpServlet{
 
 		try{
 			inter.addVoiture(voiture);
-			String message = "Votre voiture a bien été ajouté en base de données.";
+			String message = "Votre voiture a bien été ajoutée en base de données.";
 			request.setAttribute("message", message);
 		}catch(Exception e) {
 			String error = "Erreur lors de l'insertion de la voiture dans la BDD. " + e;

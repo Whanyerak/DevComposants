@@ -48,7 +48,10 @@
 							€
 						</p>
 						<%-- <a href="#" class="btn btn-primary">Voir l'annonce</a> --%>
-						<a href="#"> <i class="fas fa-search"></i>
+						<a href="Vehicule_Servlet">
+						<p>--> <%=vehicules.get(i).getId()%> <--</p>
+							<%-- <input type="text" name="id" value="<% vehicules.get(i).getId();%>"/> --%>
+							<i class="fas fa-search" name="id" value="<%=vehicules.get(i).getId()%>"></i>
 						</a>
 					</div>
 				</div>

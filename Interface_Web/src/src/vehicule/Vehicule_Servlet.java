@@ -25,11 +25,8 @@ public class Vehicule_Servlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.valueOf(request.getParameter("id"));
-		
 		Vehicule_entity ve = interVehicule.getVehicule(id);
-		
 		request.setAttribute("vehicule", ve);
-		
 		request.getRequestDispatcher("vehiculeDetail.jsp").forward(request, response);
 	}
 

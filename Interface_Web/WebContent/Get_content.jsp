@@ -47,9 +47,13 @@
 							<%=vehicules.get(i).getPrix()%>
 							€
 						</p>
-						<%-- <a href="#" class="btn btn-primary">Voir l'annonce</a> --%>
-						<a href="#"> <i class="fas fa-search"></i>
-						</a>
+
+						<form method="get" action="Vehicule_Servlet">
+							<button class="btn btn-light" type="submit" name="id" value="<%=vehicules.get(i).getId()%>">
+								<i class="fas fa-search"></i>
+							</button>
+						</form>
+
 					</div>
 				</div>
 			</div>
@@ -71,9 +75,11 @@
 							<%=vehicules.get(i).getPrix()%>
 							€
 						</p>
-						<%-- <a href="#" class="btn btn-primary">Voir l'annonce</a> --%>
-						<a href="#"> <i class="fas fa-search"></i>
-						</a>
+						<form method="get" action="Vehicule_Servlet">
+							<button class="btn btn-light" type="submit" name="id" value="<%=vehicules.get(i).getId()%>">
+								<i class="fas fa-search"></i>
+							</button>
+						</form>
 					</div>
 				</div>
 			</div>

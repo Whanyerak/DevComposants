@@ -45,11 +45,13 @@ public class Voiture_Servlet extends HttpServlet{
 		String marque = String.valueOf(request.getParameter("marque"));
 		String modele = String.valueOf(request.getParameter("modele"));
 		String prix = String.valueOf(request.getParameter("prix"));
+		String description = String.valueOf(request.getParameter("description"));
 
 		Voiture_entity voiture = new Voiture_entity();
 		voiture.setMarque(marque);
 		voiture.setModele(modele);
 		voiture.setPrix(prix);
+		voiture.setPrix(description);
 
 		try{
 			inter.addVoiture(voiture);

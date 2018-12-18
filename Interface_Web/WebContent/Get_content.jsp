@@ -47,16 +47,13 @@
 							<%=vehicules.get(i).getPrix()%>
 							€
 						</p>
-						<%-- <a href="#" class="btn btn-primary">Voir l'annonce</a> --%>
+
 						<form method="get" action="Vehicule_Servlet">
-							<input type="hidden" name="id" value="<%=vehicules.get(i).getId()%>"/>
-							<button class="fas fa-search" type="submit"></button>
+							<button class="btn btn-light" type="submit" name="id" value="<%=vehicules.get(i).getId()%>">
+								<i class="fas fa-search"></i>
+							</button>
 						</form>
-						<%-- <a href="Vehicule_Servlet?doGet">
-						<p>--> <%=vehicules.get(i).getId()%> <--</p>
-							<input type="hidden" name="id" value="<% vehicules.get(i).getId();%>"/>
-							<i class="fas fa-search" name="id" value="<%=vehicules.get(i).getId()%>"></i>
-						</a> --%>
+
 					</div>
 				</div>
 			</div>
@@ -78,9 +75,11 @@
 							<%=vehicules.get(i).getPrix()%>
 							€
 						</p>
-						<%-- <a href="#" class="btn btn-primary">Voir l'annonce</a> --%>
-						<a href="#"> <i class="fas fa-search"></i>
-						</a>
+						<form method="get" action="Vehicule_Servlet">
+							<button class="btn btn-light" type="submit" name="id" value="<%=vehicules.get(i).getId()%>">
+								<i class="fas fa-search"></i>
+							</button>
+						</form>
 					</div>
 				</div>
 			</div>

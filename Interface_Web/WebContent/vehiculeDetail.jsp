@@ -18,19 +18,19 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
 	<% Vehicule_entity ve = (Vehicule_entity)request.getAttribute("vehicule"); %>
-	
-	<%= ve.getMarque() %>
-	<%= ve.getDescription() %>
-	<%= ve.getId() %>
-	<%= ve.getModele() %>
-	<%= ve.getPrix() %>
-	
-	
-    <form action="Vehicule_Servlet" method="get">
-      <div id="addPage" class="form-group">
-        <button type="submit" class="btn btn-primary">Vehicule servlet access</button>
-      </div>
-    </form>
+	<div class="container">
+		<div class="jumbotron">
+    		<h1 id="articles">Détails de l'article proposé : </h1> 
+		</div>
+
+		<%= ve.getMarque() %>
+		<%= ve.getDescription() %>
+		<%= ve.getId() %>
+		<%= ve.getModele() %>
+		<%= ve.getPrix() %>
+        <%= ve.getPrix() %>
+
+	</div>
 
 </body>
 </html>

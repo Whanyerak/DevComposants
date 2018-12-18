@@ -33,4 +33,10 @@ public class Voitures implements IVoiture {
 		
 		return vehicules;
 	}
+
+
+	@Override
+	public void deleteVoiture(int id) {
+		em.createQuery("DELETE v From Voiture_entity v WHERE id="+id).executeUpdate();
+	}
 }

@@ -29,4 +29,9 @@ public class Motos implements IMoto{
 
 		return motos;
 	}
+
+	@Override
+	public void deleteMoto(int id) {
+		em.createQuery("DELETE m From Moto_entity m WHERE id="+id).executeUpdate();
+	}
 }

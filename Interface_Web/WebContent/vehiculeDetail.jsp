@@ -17,7 +17,15 @@ pageEncoding="UTF-8"%>
 <title>DAT TITLE!!! BOUM(ceci est une explosion de Michael Bay)</title>
 </head>
 <body>
-
+	<% Vehicule_entity ve = (Vehicule_entity)request.getAttribute("vehicule"); %>
+	
+	<%= ve.getMarque() %>
+	<%= ve.getDescription() %>
+	<%= ve.getId() %>
+	<%= ve.getModele() %>
+	<%= ve.getPrix() %>
+	
+	
     <form action="Vehicule_Servlet" method="get">
       <div id="addPage" class="form-group">
         <button type="submit" class="btn btn-primary">Vehicule servlet access</button>

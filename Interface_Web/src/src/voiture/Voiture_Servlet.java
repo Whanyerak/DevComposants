@@ -1,6 +1,7 @@
 package src.voiture;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entities.Option;
 import entities.Voiture_entity;
 import interfaces.IVoiture;
 
@@ -46,12 +48,26 @@ public class Voiture_Servlet extends HttpServlet{
 		String modele = String.valueOf(request.getParameter("modele"));
 		String prix = String.valueOf(request.getParameter("prix"));
 		String description = String.valueOf(request.getParameter("description"));
+		int quantite = Integer.valueOf(request.getParameter("quantite"));
+		String[] options = request.getParameterValues("options");
+		String couleur = String.valueOf(request.getParameter("couleur"));
+
+		List<Option> listOptions = new ArrayList<>(); 
+		for(int i = 0; i< options.length; i++) {
+			Option o = new Option();
+			o.setName(options[i]);
+			listOptions.add(o);
+		}
+
 
 		Voiture_entity voiture = new Voiture_entity();
 		voiture.setMarque(marque);
 		voiture.setModele(modele);
 		voiture.setPrix(prix);
-		voiture.setPrix(description);
+		voiture.setDescription(description);
+		voiture.setOptions(listOptions);
+		voiture.setQuantite(quantite);
+		voiture.setCouleur(couleur);
 
 		try{
 			inter.addVoiture(voiture);

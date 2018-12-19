@@ -18,18 +18,56 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
 	<% Vehicule_entity ve = (Vehicule_entity)request.getAttribute("vehicule"); %>
+
+
+  <%-- A supp après --%>
+  <form action="Autre_Servlet" method="post">
+		
+			<input type="text" name="marque" placeholder="BMW"><br>
+			<input type="text" name="modele" placeholder="118i"><br>
+      <%-- <input type="text" name="options" placeholder="option"><br> --%>
+      <select type="text" name="options" multiple>
+        <option type="radio" value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="renault">Renault</option>
+      </select><br>
+			<input type="number" name="prix" placeholder="10000€"><br>
+			<input type="number" name="quantite" placeholder="Nb d'exemplaires"><br>
+			<input type="text" name="couleur" placeholder="Noire"><br>
+      <input type="text" name="description" placeholder="Belle?"><br>
+			<button type="submit">Add Autre</button>
+		
+		</form>
+  <%-- voila --%>
+
+
 	<div class="container">
 		<div class="jumbotron">
     		<h1 id="articles">Détails de l'article proposé : </h1> 
 		</div>
 
-		<%= ve.getMarque() %>
-		<%= ve.getDescription() %>
-		<%= ve.getId() %>
-		<%= ve.getModele() %>
-		<%= ve.getPrix() %>
-        <%= ve.getPrix() %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= ve.getMarque() %></h5>
+        <p class="card-text"><%= ve.getModele() %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><p>Description du produit : </p><p><%= ve.getDescription() %></p></li>
+        <li class="list-group-item">Prix : <%= ve.getPrix() %> €</li>
 
+        <% if(ve.getOptions().size() != 0){%>
+        <li class="list-group-item">Options : <ul><% for(Option o : ve.getOptions()){%>
+          <li><%= o.getName() %></li> <%}
+        %></ul>
+        </li>
+        <%}%>
+
+      </ul>
+      <div class="card-body">
+        <a href="index.html" class="card-link">Retour à l'accueil</a>
+        <a href="#" class="card-link">Mettre dans le panier</a>
+      </div>
+    </div>
 	</div>
 
 </body>

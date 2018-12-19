@@ -1,4 +1,8 @@
-	<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="entities.*"%>
+    
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8" />
@@ -8,25 +12,34 @@
 			crossorigin="anonymous" />
 		<link rel="stylesheet" href="css/index.css" />
 		<title>PA - le dieu</title>
+		<% User_entity user = (User_entity)request.getSession(false).getAttribute("currentSessionUser");%>
 	</head>
-	
+
 	<header
 		class="navbar navbar-expand flex-column flex-md-row bd-navbar header">
 		<div class="navbar-nav-scroll">
 			<ul class="navbar-nav bd-navbar-nav flex-row">
 				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
-					href="/Interface_Web/index.html">Acceuil</a></li>
-				<li class="nav-item"><a class="nav-link nav-link mr-md-4"
+					href="/Interface_Web/index.html">Accueil</a></li>
+				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
 					href="/Interface_Web/Voiture_Servlet">Voitures</a></li>
-				<li class="nav-item"><a class="nav-link nav-link mr-md-4"
+				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
 					href="/Interface_Web/Moto_Servlet">Motos</a></li>
-				<li class="nav-item"><a class="nav-link nav-link mr-md-4"
+				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
 					href="/Interface_Web/Autre_Servlet">Autres</a></li>
 			</ul>
 		</div>
+		
 		<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-			<li class="nav-item"><a class="nav-link active"
-				href="/Interface_Web/index.html">Connexion</a></li>
+			<% if(user == null) { %>
+				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
+					href="/Interface_Web/Login.jsp">Connexion</a></li>
+				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
+					href="/Interface_Web/Inscription.jsp">Inscription</a></li>
+			<% } else { %>
+				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
+					href="/Interface_Web/User_Servlet?method=logout">Deconnexion</a></li>
+			<% } %>		
 		</ul>
 	</header>
 	
@@ -67,7 +80,7 @@
 							alt="Card image cap" />
 						<div class="card-body">
 							<h5 class="card-title">Autres</h5>
-							<p class="card-text">Voir tous les v�hicules autres du site.</p>
+							<p class="card-text">Voir tous les véhicules autres du site.</p>
 							<form action="Autre_Servlet" method="get">
 								<button type="submit" class="btn btn-primary">Accéder
 									aux autres</button>

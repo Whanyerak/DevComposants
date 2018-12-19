@@ -1,8 +1,6 @@
 package src.user;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -12,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import entities.Autre_entity;
-import entities.Option;
 import entities.User_entity;
 import interfaces.IUser;
 
@@ -41,13 +37,22 @@ public class User_Servlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		User_entity user = interUser.getUser(request.getParameter("email"));
-
-		if(user.getPassword().equals(request.getParameter("password"))) {
-			HttpSession session = request.getSession(true);
-			session.setAttribute("currentSessionUser", user);
-			request.getRequestDispatcher("index.html").forward(request, response);
-		}
+		String action = String.valueOf(request.getParameter("method"));
 		
+		if(action.equals("logout")) {
+		
+			HttpSession session = request.getSession(false);
+			session.invalidate();
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+		} else {
+	
+			if(user.getPassword().equals(request.getParameter("password"))) {
+				HttpSession session = request.getSession(true);
+				session.setAttribute("currentSessionUser", user);
+				request.getRequestDispatcher("index.jsp").forward(request, response);
+			}
+		}
 	}
 
 	/**
@@ -66,9 +71,9 @@ public class User_Servlet extends HttpServlet {
 		
 		interUser.addUser(user);
 		
-		request.setAttribute("utilisateur", user);
-		request.getRequestDispatcher("index.html").forward(request, response);
-		
+		HttpSession session = request.getSession(true);
+		session.setAttribute("currentSessionUser", user);
+		request.getRequestDispatcher("index.jsp").forward(request, response);		
 	}
 
 }

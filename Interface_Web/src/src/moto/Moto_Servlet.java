@@ -48,11 +48,13 @@ public class Moto_Servlet extends HttpServlet {
 		String marque = String.valueOf(request.getParameter("marque"));
 		String modele = String.valueOf(request.getParameter("modele"));
 		String prix = String.valueOf(request.getParameter("prix"));
+		String description = String.valueOf(request.getParameter("description"));
 		
 		Moto_entity m = new Moto_entity();
 		m.setMarque(marque);
 		m.setModele(modele);
 		m.setPrix(prix);
+		m.setDescription(description);
 		inter.addMoto(m);
 				
 		request.setAttribute("m", m);

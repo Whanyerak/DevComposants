@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import enums.Role;
@@ -19,6 +20,8 @@ public class User_entity {
 	private String password;
 	private Boolean valid;
 	private Role role;
+	@OneToOne
+	private Cart_entity cart;
 	
 	public User_entity() {
 		super();
@@ -67,6 +70,13 @@ public class User_entity {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
+
+	public Cart_entity getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart_entity cart) {
+		this.cart = cart;
+	}
 	
 }

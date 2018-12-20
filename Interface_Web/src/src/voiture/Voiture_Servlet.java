@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entities.Option;
+import entities.Option_entity;
 import entities.Voiture_entity;
 import interfaces.IVoiture;
 
@@ -52,9 +52,9 @@ public class Voiture_Servlet extends HttpServlet{
 		String[] options = request.getParameterValues("options");
 		String couleur = String.valueOf(request.getParameter("couleur"));
 
-		List<Option> listOptions = new ArrayList<>(); 
+		List<Option_entity> listOptions = new ArrayList<>(); 
 		for(int i = 0; i< options.length; i++) {
-			Option o = new Option();
+			Option_entity o = new Option_entity();
 			o.setName(options[i]);
 			listOptions.add(o);
 		}

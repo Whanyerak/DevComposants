@@ -18,7 +18,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="Vehicules")
-
 public abstract class Vehicule_entity implements Serializable {
 
 	@Id
@@ -31,7 +30,7 @@ public abstract class Vehicule_entity implements Serializable {
 	private String couleur;
 	private String description;
 	@OneToMany(cascade=CascadeType.ALL , fetch = FetchType.EAGER)
-	private List<Option> options;
+	private List<Option_entity> options;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -95,11 +94,11 @@ public abstract class Vehicule_entity implements Serializable {
 		this.description = description;
 	}
 
-	public List<Option> getOptions() {
+	public List<Option_entity> getOptions() {
 		return options;
 	}
 
-	public void setOptions(List<Option> options) {
+	public void setOptions(List<Option_entity> options) {
 		this.options = options;
 	}
 	

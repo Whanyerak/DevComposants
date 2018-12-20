@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Option")
-public class Option implements Serializable{
+public class Option_entity implements Serializable{
 
 	private static final long serialVersionUID = -6133546827107135520L;
 
@@ -20,7 +20,7 @@ public class Option implements Serializable{
 	
 	private String name;
 	
-	public Option() {
+	public Option_entity() {
 		super();
 	}
 

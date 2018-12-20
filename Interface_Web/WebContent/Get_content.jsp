@@ -45,30 +45,13 @@
 					href="/Interface_Web/Inscription.jsp">Inscription</a></li>
 			<% } else { %>
 				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
+					href="/Interface_Web/admin.jsp">Mon espace</a></li>
+				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
 					href="/Interface_Web/User_Servlet?method=logout">Deconnexion</a></li>
 			<% } %>		
 		</ul>
 	</header>
 <body>
-
-  <%-- A supp après --%>
-  <%-- <form action="Voiture_Servlet" method="post">
-		
-	<input type="text" name="marque" placeholder="BMW"><br>
-	<input type="text" name="modele" placeholder="118i"><br> --%>
-    <%-- <input type="text" name="options" placeholder="option"><br> --%>
-    <%-- <select type="text" name="options" multiple>
-    	<option type="radio" value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="renault">Renault</option>
-    </select><br>
-		<input type="number" name="prix" placeholder="10000€"><br>
-		<input type="number" name="quantite" placeholder="Nb d'exemplaires"><br>
-		<input type="text" name="couleur" placeholder="Noire"><br>
-      	<input type="text" name="description" placeholder="Belle?"><br>
-		<button type="submit">Add Autre</button>
-	</form> --%>
-  <%-- voila --%>
 
 	<div class="container">
 		<div class="jumbotron">

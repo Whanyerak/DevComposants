@@ -41,6 +41,8 @@ pageEncoding="UTF-8"%>
 				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
 					href="/Interface_Web/Inscription.jsp">Inscription</a></li>
 			<% } else { %>
+      <li class="nav-item"><a class="nav-item nav-link mr-md-4"
+					href="/Interface_Web/admin.jsp">Mon espace</a></li>
 				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
 					href="/Interface_Web/User_Servlet?method=logout">Deconnexion</a></li>
 			<% } %>		

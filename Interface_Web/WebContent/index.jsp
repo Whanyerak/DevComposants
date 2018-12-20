@@ -10,10 +10,13 @@
 			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 			crossorigin="anonymous" />
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 		<link rel="stylesheet" href="css/index.css" />
 		<title>PA - le dieu</title>
 		<% User_entity user = (User_entity)request.getSession(false).getAttribute("currentSessionUser");%>
 	</head>
+
+	<body>
 
 	<header
 		class="navbar navbar-expand flex-column flex-md-row bd-navbar header">
@@ -38,12 +41,14 @@
 					href="/Interface_Web/Inscription.jsp">Inscription</a></li>
 			<% } else { %>
 				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
+					href="/Interface_Web/admin.jsp">Mon espace</a></li>
+				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
 					href="/Interface_Web/User_Servlet?method=logout">Deconnexion</a></li>
 			<% } %>		
 		</ul>
 	</header>
-	
-	<body>
+
+
 		<div class="menu">
 			<div class="row">
 				<div class="col-sm-4">
@@ -89,6 +94,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>	
 	</body>
 </html>

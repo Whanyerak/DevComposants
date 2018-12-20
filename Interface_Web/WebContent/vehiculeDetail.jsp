@@ -64,7 +64,9 @@ pageEncoding="UTF-8"%>
         <li class="list-group-item">Prix : <%= ve.getPrix() %> €</li>
 
         <% if(ve.getOptions().size() != 0){%>
-        <li class="list-group-item">Options : <ul><% for(Option o : ve.getOptions()){%>
+        <li class="list-group-item">Options : <ul><%
+        	for(Option_entity o : ve.getOptions()){
+        %>
           <li><%= o.getName() %></li> <%}
         %></ul>
         </li>

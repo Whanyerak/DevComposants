@@ -25,7 +25,7 @@ public class Motos implements IMoto{
 	public List<Moto_entity> getMotos() {
 
 		List<Moto_entity> motos = new ArrayList<>();
-		motos = (List<Moto_entity>)em.createQuery("select m from Moto_entity m").getResultList();
+		motos = (List<Moto_entity>)em.createQuery("SELECT m from Moto_entity m").getResultList();
 
 		return motos;
 	}

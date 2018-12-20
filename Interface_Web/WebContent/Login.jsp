@@ -9,8 +9,8 @@
 </head>
 <body>
 	<form action="User_Servlet" method="get">
-		Please enter your username <input type="email" name="email" /><br>
-		Please enter your password <input type="password" name="password" />
+		<input type="email" name="email" placeholder="user@fournisseur.fr"/>
+		<input type="password" name="password" placeholder="*******" />
 		<input type="submit" value="submit">
 	</form>
 </body>

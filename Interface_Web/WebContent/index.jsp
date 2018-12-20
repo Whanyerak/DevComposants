@@ -20,7 +20,7 @@
 		<div class="navbar-nav-scroll">
 			<ul class="navbar-nav bd-navbar-nav flex-row">
 				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
-					href="/Interface_Web/index.html">Accueil</a></li>
+					href="/Interface_Web/">Accueil</a></li>
 				<li class="nav-item"><a class="nav-item nav-link mr-md-4"
 					href="/Interface_Web/Voiture_Servlet">Voitures</a></li>
 				<li class="nav-item"><a class="nav-item nav-link mr-md-4"

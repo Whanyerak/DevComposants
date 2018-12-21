@@ -90,7 +90,7 @@
 							<%-- <form action="Moto_Servlet" method="get">
 								<button type="submit" class="btn btn-primary">Voir toutes nos Motos</button>
 							</form>
-						</div> --%>
+						</div> --%> 
 					</div>
 				</div>
 				<div class="col-sm-4">

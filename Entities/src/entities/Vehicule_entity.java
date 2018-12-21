@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="Vehicules")
-public abstract class Vehicule_entity implements Serializable {
+public class Vehicule_entity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

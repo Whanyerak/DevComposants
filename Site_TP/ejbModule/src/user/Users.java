@@ -19,12 +19,14 @@ public class Users implements IUser {
     private static final String PARAM_EMAIL           = "email";
 
     // Enregistrement d'un nouvel utilisateur
+    @Override
     public void addUser(User_entity user) {
     	em.persist(user);
     }
 
 
     // Recherche d'un utilisateur à partir de son adresse email
+    @Override
     public User_entity getUser(String email) {
         User_entity utilisateur = null;
 
@@ -39,6 +41,23 @@ public class Users implements IUser {
         
         return utilisateur;
 
+    }
+
+    // Recherche d'un utilisateur à partir de son id
+    @Override
+    public User_entity getUser(int id) {
+    	User_entity utilisateur = null;
+    	
+    	Query requete = em.createQuery("SELECT u FROM User_entity u WHERE u.id="+id);
+    	
+    	try {
+    		utilisateur = (User_entity)requete.getSingleResult();
+    	} catch (NoResultException e) {
+    		return null;
+    	}
+    	
+    	return utilisateur;
+    	
     }
 
 }

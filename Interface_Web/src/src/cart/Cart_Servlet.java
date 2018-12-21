@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import entities.Cart_entity;
 import entities.Vehicule_entity;
 import interfaces.ICart;
+import interfaces.IUser;
 import interfaces.IVehicule;
 
 /**
@@ -18,40 +20,54 @@ import interfaces.IVehicule;
  */
 @WebServlet("/Cart_Servlet")
 public class Cart_Servlet extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
-       
-	@EJB
-	private ICart interC;
+	
 	@EJB
 	private IVehicule interV;
 	
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+	@EJB
+	private IUser interU;
+	
+	@EJB
+	private ICart interC;
+	
     public Cart_Servlet() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Integer id = Integer.valueOf(request.getParameter("id"));
-		
-		Vehicule_entity ve = interV.getVehicule(id);
-		
-		interC.addProduct(ve);
+		Integer userId = Integer.valueOf(request.getParameter("idUser"));
+		Cart_entity cart = interC.getCart(userId);
+			
+		Integer vehicule_id = Integer.valueOf(request.getParameter("id"));	
+		if(vehicule_id != null && vehicule_id != 0) {
 
-		request.getRequestDispatcher("Added_page.jsp").forward(request, response);
+			 Vehicule_entity vehicule = interV.getVehicule(vehicule_id);
+		     interC.addProduct(cart, vehicule);
+
+		     System.out.println("product "+vehicule.getModele()+" added");
+		     request.getRequestDispatcher("index.jsp").forward(request, response);
+		     
+		 }
+
+		 String checkout = request.getParameter("checkout");
+		 if(checkout != null && checkout.equalsIgnoreCase("yes")){
+		      // Request instructs to complete the purchase
+		      interC.checkOut(cart);
+		      System.out.println("Shopping cart checked out ");
+		      request.getRequestDispatcher("index.jsp").forward(request, response);
+		 }
+		 
+		 request.getRequestDispatcher("index.jsp").forward(request, response);
+
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		doGet(request, response);
+		
 	}
-
+	
 }

@@ -6,5 +6,6 @@ public interface IUser {
 
 	public void addUser(User_entity user);
 	public User_entity getUser(String email);
+	public User_entity getUser(int id);
 	
 }

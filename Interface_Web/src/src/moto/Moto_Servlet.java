@@ -14,7 +14,7 @@ import entities.Moto_entity;
 import interfaces.IMoto;
 
 /**
- * Servlet implementation class AddVoiture_Servlet
+ * Servlet implementation class Moto_Servlet
  */
 @WebServlet("/Moto_Servlet")
 public class Moto_Servlet extends HttpServlet {

@@ -14,9 +14,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Dupon/Desktop/wildfly-14.0.1.Final/bin/client/jboss-client.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Entities"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/Vahflouz/Documents/Info M2/Semestre 9/Programmation par composants/Tests/wildfly-14.0.1.Final/bin/client/jboss-client.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ConvertMonnaie"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

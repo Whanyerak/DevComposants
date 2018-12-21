@@ -3,6 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Dupon/Desktop/wildfly-14.0.1.Final/modules/system/layers/base/javax/persistence/api/main/javax.persistence-api-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Vahflouz/Documents/Info M2/Semestre 9/Programmation par composants/wildfly-14.0.1.Final/modules/system/layers/base/javax/persistence/api/main/javax.persistence-api-2.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -63,6 +63,7 @@ pageEncoding="UTF-8"%>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><p>Description du produit : </p><p><%= ve.getDescription() %></p></li>
         <li class="list-group-item">Prix : <%= ve.getPrix() %> €
+        <p>Convertir le prix en : </p>
 				<form action="ConvertMonney" method="get">
 						<select type="text" class="form-control"  name="devise">
 							<option value="Desertot">Desertot</option>
@@ -70,7 +71,7 @@ pageEncoding="UTF-8"%>
 							<option value="Dollar">Dollar</option>
 							<option value="Franc Suisse">Franc Suisse</option>
 						</select>
-						<input type="hidden" name="prix" value="<%=ve.getPrix()%>"/>
+						<input type="hidden" name="prix" value="<%=ve.getPrix()%>"/><br>
 						<button type="submit" class="btn btn-warning">Convertir</button>
 					</form>
 					

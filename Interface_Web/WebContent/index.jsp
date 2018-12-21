@@ -53,64 +53,43 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<div class="card">
-						<div class="container">
+						<img class="card-img-top" src="Images/voiture.jpeg"
+							alt="Card image cap" />
+						<div class="card-body">
+							<h5 class="card-title">Voitures</h5>
+							<p class="card-text">Voir toutes les voitures du site.</p>
 							<form action="Voiture_Servlet" method="get">
-								<button type="submit" class="btn btn-link">
-									<img class="card-img-top" src="Images/voiture.jpeg" alt="Card image cap" class="image" />
-										<div class="overlay">
-											<div class="text">Voir toutes nos Voitures</div>
-										</div>
-								</button>
+								<button type="submit" class="btn btn-primary">Accéder
+									aux voitures</button>
 							</form>
 						</div>
-						<%-- <div class="card-body"> --%>
-							<%-- <h5 class="card-title">Voitures</h5>
-							<p class="card-text">Voir toutes les voitures du site.</p> --%>
-							<%-- <form action="Voiture_Servlet" method="get">
-								<button type="submit" class="btn btn-link">Voir toutes nos Voitures</button>
-							</form> --%>
-						<%-- </div> --%>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="card">
-						<div class="container">
+						<img class="card-img-top" src="Images/moto.jpg"
+							alt="Card image cap" />
+						<div class="card-body">
+							<h5 class="card-title">Motos</h5>
+							<p class="card-text">Voir toutes les motos du site.</p>
 							<form action="Moto_Servlet" method="get">
-								<button type="submit" class="btn btn-link">
-									<img class="card-img-top" src="Images/moto.jpg" alt="Card image cap" class="image" />
-										<div class="overlay">
-											<div class="text">Voir toutes nos Moto</div>
-										</div>
-								</button>
+								<button type="submit" class="btn btn-primary">Accéder
+									aux motos</button>
 							</form>
 						</div>
-						<%-- <div class="card-body"> --%>
-							<%-- <h5 class="card-title">Motos</h5>
-							<p class="card-text">Voir toutes les motos du site.</p> --%>
-							<%-- <form action="Moto_Servlet" method="get">
-								<button type="submit" class="btn btn-primary">Voir toutes nos Motos</button>
-							</form>
-						</div> --%> 
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class="card">
-						<div class="container">
+						<img class="card-img-top" src="Images/autre.png"
+							alt="Card image cap" />
+						<div class="card-body">
+							<h5 class="card-title">Autres</h5>
+							<p class="card-text">Voir tous les véhicules autres du site.</p>
 							<form action="Autre_Servlet" method="get">
-								<button type="submit" class="btn btn-link">
-									<img class="card-img-top" src="Images/autre.png" alt="Card image cap" class="image" />
-										<div class="overlay">
-											<div class="text">Voir tout nos autres véhicules</div>
-										</div>
-								</button>
+								<button type="submit" class="btn btn-primary">Accéder
+									aux autres</button>
 							</form>
-						</div>
-						<%-- <div class="card-body"> --%>
-							<%-- <h5 class="card-title">Autres</h5>
-							<p class="card-text">Voir tous les véhicules autres du site.</p> --%>
-							<%-- <form action="Autre_Servlet" method="get">
-								<button type="submit" class="btn btn-primary">Voir tout nos autres véhicules</button>
-							</form> --%>
 						</div>
 					</div>
 				</div>

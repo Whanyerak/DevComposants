@@ -6,6 +6,7 @@
 		<project>Site_TP</project>
 		<project>Entities</project>
 		<project>Interface_Web</project>
+		<project>ConvertMonnaie</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -95,8 +95,8 @@ pageEncoding="UTF-8"%>
 					</p>
 				<% } else { %>
 					<form action="Cart_Servlet" method="post">
-						<%-- <input type="hidden" name="<%ve.getId();%>">
-						<input type="hidden" name="<%user.getId();%>"> --%>
+						<input type="hidden" name="id" value="49">
+						<input type="hidden" name="idUser" value="2" >
 						<button type="submit" class="btn btn-link">Mettre dans le panier</button>
 					</form>
 				<% } %>
@@ -106,4 +106,4 @@ pageEncoding="UTF-8"%>
 	</div>
 
 </body>
-</html>
+</html>	

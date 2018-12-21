@@ -16,6 +16,7 @@ pageEncoding="UTF-8"%>
 	<link rel="stylesheet" href="css/index.css" />
 	<title>Administration</title>
 	<% User_entity user = (User_entity)request.getSession(false).getAttribute("currentSessionUser");%>
+	<% Cart_entity cart = (Cart_entity)request.getAttribute("vehicule"); %>
 </head>
 <header
 		class="navbar navbar-expand flex-column flex-md-row bd-navbar header">
@@ -64,9 +65,14 @@ pageEncoding="UTF-8"%>
 				<div class="col-sm-9">
 					<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="tab1">
-							<form action="Voiture_Servlet" method="post">
-								Gestion de la panière
-							</form>
+						<label class="vehicle">Gestion du panier</label>
+						<%-- <% if(cart.getVehicules().size() != 0) { %>
+							<ul>Véhicules : 
+								<% for(cart.getVehicules().size() != 0) { %>
+									<li><%= cart.getVehicules()%></li>
+								<% } %>
+							</ul>
+						<% } %> --%>
 						</div>
 						<div role="tabpanel" class="tab-pane" id="tab2">
 							<form action="Voiture_Servlet" method="post">

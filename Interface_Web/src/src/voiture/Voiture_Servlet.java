@@ -78,7 +78,7 @@ public class Voiture_Servlet extends HttpServlet{
 			request.setAttribute("error", error);
 		}
 
-		request.getRequestDispatcher("Added_page.jsp").forward(request, response);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }

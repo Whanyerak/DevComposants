@@ -13,6 +13,7 @@ pageEncoding="UTF-8"%>
     />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"><link rel="stylesheet" href="css/index.css" />
+	<link rel="stylesheet" href="css/index.css" />
 	<title>Administration</title>
 	<% User_entity user = (User_entity)request.getSession(false).getAttribute("currentSessionUser");%>
 </head>
@@ -50,19 +51,26 @@ pageEncoding="UTF-8"%>
 	<div class="container">
 		<% if (user != null) { %>
 			<h1>Bienvenue <%= user.getUsername() %> !</h1>
-			<p>Que voulez-vous faire ?</p>
+			<p class="vehicle_management">Que voulez-vous faire ?</p>
 			<div role="tabpanel">
 				<div class="col-sm-3">
 					<ul class="nav nav-pills brand-pills nav-stacked" role="tablist">
-						<li role="presentation" class="brand-nav active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Gestion des voitures</a></li>
-						<li role="presentation" class="brand-nav"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Gestion des motos</a></li>
-						<li role="presentation" class="brand-nav"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Gestion des autres véhicules</a></li>
+						<li role="presentation" class="brand-nav active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Voir mon panier</a></li>
+						<li role="presentation" class="brand-nav"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Gestion des voitures</a></li>
+						<li role="presentation" class="brand-nav"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Gestion des motos</a></li>
+						<li role="presentation" class="brand-nav"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Gestion des autres véhicules</a></li>
 					</ul>
 				</div>
 				<div class="col-sm-9">
 					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane active" id="tab1">
+					<div role="tabpanel" class="tab-pane active" id="tab1">
 							<form action="Voiture_Servlet" method="post">
+								Gestion de la panière
+							</form>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="tab2">
+							<form action="Voiture_Servlet" method="post">
+								<label class="vehicle">Ajout d'une voiture</label>
 								<div class="form-group">
 									<input type="text" class="form-control" name="marque" placeholder="Marque">
 									<input type="text" class="form-control" name="modele" placeholder="Modèle">
@@ -79,8 +87,9 @@ pageEncoding="UTF-8"%>
 								<button type="submit" class="btn btn-primary">Créer ce produit</button>
 							</form>
 						</div>
-						<div role="tabpanel" class="tab-pane" id="tab2">
+						<div role="tabpanel" class="tab-pane" id="tab3">
 							<form action="Moto_Servlet" method="post">
+							<label class="vehicle">Ajout d'une moto</label>
 								<div class="form-group">
 									<input type="text" class="form-control" name="marque" placeholder="Marque">
 									<input type="text" class="form-control" name="modele" placeholder="Modèle">
@@ -97,8 +106,9 @@ pageEncoding="UTF-8"%>
 								<button type="submit" class="btn btn-primary">Créer ce produit</button>
 							</form>
 						</div>
-						<div role="tabpanel" class="tab-pane" id="tab3">
+						<div role="tabpanel" class="tab-pane" id="tab4">
 							<form action="Autre_Servlet" method="post">
+							<label class="vehicle">Ajout d'un autre véhicule</label>
 								<div class="form-group">
 									<input type="text" class="form-control" name="marque" placeholder="Marque">
 									<input type="text" class="form-control" name="modele" placeholder="Modèle">

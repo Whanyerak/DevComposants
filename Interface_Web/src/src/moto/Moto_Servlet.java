@@ -58,7 +58,7 @@ public class Moto_Servlet extends HttpServlet {
 		inter.addMoto(m);
 				
 		request.setAttribute("m", m);
-		request.getRequestDispatcher("Added_page.jsp").forward(request, response);
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 }

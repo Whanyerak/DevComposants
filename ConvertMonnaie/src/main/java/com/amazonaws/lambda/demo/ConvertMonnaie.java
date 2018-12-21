@@ -43,8 +43,8 @@ public class ConvertMonnaie {
 	}
 
 	public Double lambdaFunction(ConverterInput input) {
-		final String aws_access_key_id = "AKIAJYFPSHWU55E5IHCA";
-		final String aws_secret_access_key = "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";
+		final String aws_access_key_id = "AKIAJYG72TIOPB5MGREA";
+		final String aws_secret_access_key = "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";
 		final Logger logger = Logger.getLogger( this.getClass().getName() );
 
 		AWSLambda lambdaClient = buildClient(aws_access_key_id, aws_secret_access_key);
